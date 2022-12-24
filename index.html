@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 
 <head>
@@ -12,65 +8,17 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="">
-  <style>
-    body,
-    html {
-      margin: 0;
-    }
-
-    html {
-      height: 100%;
-    }
-
-    body {
-      height: inherit;
-      overflow: hidden;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    h1,
-    p {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 20px;
-    }
-
-    div {
-      height: 100px;
-      overflow: auto;
-      position: absolute;
-      bottom: 0px;
-      right: 0;
-      left: 0;
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    ul {
-      margin: 0;
-    }
-
-    .hints span {
-      text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
-    }
-  </style>
 </head>
 
 <body>
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-  <button id="btn-say-hello">
-    Say Hello
-  </button>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/IDMNYU/p5.js-speech@0.0.3/lib/p5.speech.js"></script>
+  <textarea id="rc-text-to-speak"></textarea>
+  <button id="rc-speak">Click me</button>
   <script>
-    document.getElementById('btn-say-hello').addEventListener('click', () => {
-      var foo = new p5.Speech(); // speech synthesis object
-      foo.speak('hi there'); // say something
+    const textInput = document.getElementById('rc-text-to-speak');
+    const btn = document.getElementById('rc-speak');
+    btn.addEventListener('click', () => {
+      let utterance = new SpeechSynthesisUtterance(textInput.value);
+      speechSynthesis.speak(utterance);
     });
   </script>
 </body>
