@@ -24,7 +24,9 @@
     const btn = document.getElementById('rc-speak');
     btn.addEventListener('click', () => {
       let utterance = new SpeechSynthesisUtterance(textInput.value);
+      console.log('1')
       speechSynthesis.speak(utterance);
+      console.log('2')
     });
   </script>
 </body>
