@@ -11,8 +11,14 @@
 </head>
 
 <body>
-  <textarea id="rc-text-to-speak"></textarea>
-  <button id="rc-speak">Click me</button>
+  <div style="display: flex;">
+    <div>
+      <textarea id="rc-text-to-speak" style="height: 200px; width: 300px; padding: 10px;">Karma in Sanskrit means an action, work, or deed, and its effect or consequences. In Indian religions, the term more specifically refers to a principle of cause and effect, often descriptively called the principle of karma, wherein intent and actions of an individual (cause) influence the future of that individual (effect)</textarea>
+    </div>
+    <div style="padding-left: 20px;">
+      <button id="rc-speak" style="width: 100px;">Speak!</button>
+    </div>
+  </div>
   <script>
     const textInput = document.getElementById('rc-text-to-speak');
     const btn = document.getElementById('rc-speak');
